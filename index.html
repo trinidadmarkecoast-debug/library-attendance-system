@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Attendance System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>📚 LIBRARY ATTENDANCE SYSTEM</h1>
+    <p>Student Library Monitoring and Attendance</p>
+</header>
+
+<div class="container">
+
+    <div class="stats">
+        <div class="stat-card">
+            <p>Total Attendance Today</p>
+            <h2 id="total">0</h2>
+        </div>
+
+        <div class="stat-card">
+            <p>Currently Inside</p>
+            <h2 id="inside">0</h2>
+        </div>
+
+        <div class="stat-card">
+            <p>Checked Out</p>
+            <h2 id="outside">0</h2>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Student Check-In</h2>
+
+        <form id="attendanceForm">
+            <div class="form-grid">
+                <div>
+                    <label>Student ID</label>
+                    <input type="text" id="studentID"
+                    placeholder="Enter Student ID" required>
+                </div>
+
+                <div>
+                    <label>Student Name</label>
+                    <input type="text" id="studentName"
+                    placeholder="Enter Full Name" required>
+                </div>
+
+                <div>
+                    <label>Course / Section</label>
+                    <input type="text" id="course"
+                    placeholder="Enter Course" required>
+                </div>
+            </div>
+
+            <button type="submit">Check In</button>
+        </form>
+    </div>
+
+    <div class="card">
+        <h2>Attendance Records</h2>
+
+        <input type="text" id="search"
+        class="search"
+        placeholder="Search Student ID or Name...">
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Name</th>
+                        <th>Course</th>
+                        <th>Date</th>
+                        <th>Time In</th>
+                        <th>Time Out</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="records"></tbody>
+            </table>
+        </div>
+
+        <button onclick="downloadCSV()">
+            Download Records
+        </button>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
